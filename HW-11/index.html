@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var h=["Привет,","мир","!" ];
+        var a=(h[0]+h[1]+h[2]);
+        alert(a);
+
+    </script>
+    <script>
+        // 2 if: 
+        var lang = 'ru';
+        if (lang == 'ru') {
+	        var arr = ['понеділок', 'вівторок', 'середа', 'четвер', 'пятниця', 'субота', 'неділя'];
+        }
+        if (lang == 'en') {
+	        arr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
+        }
+        alert(arr);
+    //   switch-case: 
+        var lang ='ru';
+        switch (lang){
+            case 'ru':
+                var arr= ['понеділок', 'вівторок', 'середа', 'четвер', 'пятниця', 'субота', 'неділя'];
+            break;
+            case 'en':
+                var arr= ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
+            break;
+            default:
+                alert('нет такого значения');
+        }
+        alert(arr);
+        // многомерный массив: 
+        var lang='ru';
+        var arr={
+            'ru':['понеділок', 'вівторок', 'середа', 'четвер', 'пятниця', 'субота', 'неділя'],
+            'en':['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+        };
+        alert(arr[lang]);
+    </script>
+    <script>
+        for (var floors = 1; floors <= 25; floors ++) {}
+        for (var porches = 1; porches <= 10; porches ++) {}  
+        for (var apartmentsPerFloor = 1;  apartmentsPerFloor <= 20;  apartmentsPerFloor ++) {} 
+        var apartment = parseInt(prompt("Номер квартиры", Math.random() * 100 | 0), 10); 
+        var floor = Math.ceil(apartment / apartmentsPerFloor); // этаж относительно дома
+        var porch = Math.ceil(floor / floors); 	// подъезд относительно дома.
+        floor -= (porch - 1) * floors; // этаж относительно подъезда
+        alert("Квартира с номером " + apartment + " находится в подъезде № " + porches + " на " + floor + " этаже");
+    </script>
+</body>
+</html>
