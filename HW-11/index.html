@@ -45,14 +45,40 @@
         alert(arr[lang]);
     </script>
     <script>
-        for (var floors = 1; floors <= 25; floors ++) {}
-        for (var porches = 1; porches <= 10; porches ++) {}  
-        for (var apartmentsPerFloor = 1;  apartmentsPerFloor <= 20;  apartmentsPerFloor ++) {} 
-        var apartment = parseInt(prompt("Номер квартиры", Math.random() * 100 | 0), 10); 
-        var floor = Math.ceil(apartment / apartmentsPerFloor); // этаж относительно дома
-        var porch = Math.ceil(floor / floors); 	// подъезд относительно дома.
-        floor -= (porch - 1) * floors; // этаж относительно подъезда
-        alert("Квартира с номером " + apartment + " находится в подъезде № " + porches + " на " + floor + " этаже");
+    // Подьезд дома
+        var p=window.prompt('Введите кол-во подьездов',"10");
+            if(p>10  || !/^[0-9]+$/.test(p)){
+            alert("Значения введены не правильно. Кол-во подьездов от 1 до 10");
+        }
+
+    // Этаж дома
+        var k=window.prompt('Введите кол-во этажов',"25"); 
+            if(k>25 || !/^[0-9]+$/.test(k)){
+            alert("Значения введены не правильно. Кол-во этажов от 1 до 25")
+        }
+    // Квартира дома
+        var t=window.prompt('Введите кол-во квартир',"20"); 
+            if(t>20 || !/^[0-9]+$/.test(t)){
+            alert("Значения введены не правильно. Кол-во квартир от 1 до 20")
+        }
+    // Номер квартиры дома
+        var k1=window.prompt('Введите номер квартиры',""); 
+            if(k1>j || !/^[0-9]+$/.test(k1)){
+            alert("Значения введены не правильно. Номер квартиры привышает количество квартир в доме")
+        }
+        while (p>10 || !/^[0-9]+$/.test(p)  && k>25  || !/^[0-9]+$/.test(k) && t>20 || !/^[0-9]+$/.test(t)  && k1>j || !/^[0-9]+$/.test(k1)) {
+        close;
+        }
+        var j=p*k*t;
+        var m=k*t;
+    // расчет подьезда
+        var h=k1/(m);
+        var e = Math.ceil(h);
+    // расчет этажа
+       var x = (m*e)-k1;
+       var i = Math.floor(x/t);
+       var l = k-i;
+           alert("Квартира с номером " + k1 + " находится в подъезде № " + e + " на " + l + " этаже");
     </script>
 </body>
 </html>
