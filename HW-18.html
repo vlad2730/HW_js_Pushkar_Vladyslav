@@ -16,7 +16,10 @@
     return this.myString.split("").reverse().join("");
   }
      ucFirst(){
-      return  this.myString.charAt(0).toUpperCase() + this.myString.slice(1);
+       if(!this.myString) {
+         return this.myString;
+       }
+      return  this.myString[0].toUpperCase() + this.myString.slice(1).toLowerCase();
     }           
  ucWords ()  {
   let result = '';
