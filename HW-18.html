@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CustomString{
+  constructor (myString){
+   this.myString=myString;
+  } 
+  reverse(){
+    return this.myString.split("").reverse().join("");
+  }
+     ucFirst(){
+       if(!this.myString) {
+         return this.myString;
+       }
+      return  this.myString[0].toUpperCase() + this.myString.slice(1).toLowerCase();
+    }           
+ ucWords ()  {
+  let result = '';
+  for (let i = 0; i < this.myString.length; i++) 
+    if (this.myString[i] === this.myString[0].toLowerCase()) {
+      result += this.myString[0].toUpperCase();
+  } else if (this.myString[i-1] === ' ') {
+     result += this.myString[i].toUpperCase();
+  } else result += this.myString[i];
+  return result;
+}
+}
+const myString = new CustomString("qwerty");
+
+console.log(myString.reverse());
+console.log(myString.ucFirst());
+console.log(myString.ucWords());
+    </script>
+    <script>
+class Validator{
+  constructor(email, domen, date, phone){
+    this.email = email;
+    this.domen = domen;
+    this.date = date;
+    this.phone = phone;
+  }
+  checkIsEmail() {
+  let youMail = "@";
+    console.log(this.email.indexOf(youMail) !== -1);
+}
+  checkIsDomain(){
+    if (window.location.pathname === "" || window.location.pathname === "/") {
+      return true
+   }
+  }
+  checkIsDate(){
+    let youDate = "//^\d/"
+    console.log(this.date.indexOf(youDate) !== -1);
+  }
+  checkIsPhone(){
+    let youphone = "+380"
+    console.log(this.phone.indexOf(youphone) !== -1);
+  }
+  
+}
+  var validator = new Validator();
+
+  validator.checkIsEmail('vasya.pupkin@gmail.com');
+  validator.checkIsDomain('google.com'); 
+  validator.checkIsDate('30.11.2019'); 
+  validator.checkIsPhone('+38 (066) 937-99-92');
+    </script>
+</body>
+</html>
